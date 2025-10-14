@@ -23,3 +23,11 @@ folder_id = "1OPXB9-peoHdgrXjSMGidl3azmiHA6YXB"
 results = drive.files().list(q=f"'{folder_id}' in parents and mimeType='application/vnd.google-apps.spreadsheet'").execute()
 files = results.get('files', [])
 
+gc = gspread.authorize(creds)
+
+for file in files:
+    file_id = file['id']
+    file_name = file['name']
+
+    try: 
+        
