@@ -6,7 +6,7 @@ def setup_environment():
     subprocess.run(["python3", "-m", "venv", "venv"])
 
     print("📦 Instalando bibliotecas do requirements.txt...")
-    subprocess.run(["venv/bin/pip", "install", "-r", "requirements.txt"], shell=True)
+    subprocess.run(["venv/bin/pip", "install", "-r", "requirements.txt"])
 
     print("\n✅ Ambiente configurado com sucesso!")
     print("Para ativar o ambiente, use:")

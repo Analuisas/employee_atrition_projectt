@@ -1,10 +1,10 @@
 import pandas as pd 
 import gspread
-from googleapi.client.discovery import build
+from googleapiclient.discovery import build
 from oauth2client.service_account import ServiceAccountCredentials
 from sqlalchemy import create_engine
 
-filename = "double-kite-475110-i2-ecba07a5f7a0.json"
+filename = "credentials.json"
 scopes = [
     "https://spreadsheets.google.com/feeds",
     "https://www.googleapis.com/auth/drive"
@@ -15,6 +15,11 @@ creds = ServiceAccountCredentials.from_json_keyfile_name(
     )
 
 drive = build('drive', 'v3', credentials=creds)
-sheets = build('sheets', 'v4', credentials=creds)
 
+
+folder_id = "1OPXB9-peoHdgrXjSMGidl3azmiHA6YXB"
+
+
+results = drive.files().list(q=f"'{folder_id}' in parents and mimeType='application/vnd.google-apps.spreadsheet'").execute()
+files = results.get('files', [])
 
