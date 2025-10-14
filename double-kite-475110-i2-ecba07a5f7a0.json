@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "double-kite-475110-i2",
+  "private_key_id": "ecba07a5f7a00933b84e02d0d7b3a3c8515918f1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCNX6JfZRMKfGv2\n45VF8/wJwnqbu1CzFD6WO0SVbAF5MQQ4XBKDCH6aou7QXOvmMK7Yqr3WV180YFsy\ntVSwL0o8s7khIatwOV1ISsZIM6yTKUxSoOvhx1VEEnm+MTY5n2yzZ3P2T1Ptfcwa\nG5C+uGjis/cwE/9kEzU52i3eef/8nVGU0yewQATKsTnwZe2Eh34RpZu5iYqHL801\nByKWiRirZ59+//fdiua/S1aq+mcqNbV2PzKWOxJAGXaCcIDquIEV13Mfv3DtEoA8\nHq+tsGdVP4qstYXEjENgAW4EcKwURIt+PY6cq7nd2x4gOqJlX68aKhaetRn6K0Z3\n0lzD7A2rAgMBAAECggEAAXAQDC1QeMJULMIawgfdr9G5An1wsCmMC2YV5/kduLhN\nZS9Whtuewf7XM+pGAeTL2ms+HABueO9j7guXDWWluSFQyCv5/N2we6w7AP/5iNOa\nMZruWzD2RodzkoIYnZRn/BkYvlAHN/qYCUnvemkQtAGFiYkih0eEuo5j+ge+mTiS\nfKqIEpWPSz/mLhakC2S7YgFhrYMAX2C0LrcvBGmIWJZKeNjWY1ykfl0Y7qXPfbdx\npwyj/uUWCUGI2NNsrHWsIQ0JkWUg2r3Q3vJ3jkUdEI1i/gjcfOeDoWdCWrLMQYfR\nLuYM7rkSEeMzEOzzZEbNxG2R31GeOQqvQ4GykvlzXQKBgQDHSZ8Mxtqxj24F3QSe\noMxBnfroSHbHrGAFtZUrblv5OpO5Rtpen/n4tT1CyY1T3REPGZDpuZ2v/kJY6rSB\neKZ6apiP5pk83zG/aegN193fg8Dy07WE8Y/33wxMgZzZ36T5ZxJH2pa46j+KEU8V\nKCvcC4dpsQ9TFUTtcrsznuSaFQKBgQC1muV3PgnD2EibmCdzXZNgRgzEYgZSjZQ4\npSNUEkN+RDhRVEJQwwcYSZaCmR9vSCzEIc0v4cTHuB1dmSqeHyowpESadod50VFA\nDEYv3BhOt2UInC1RYd5Scvr8RR8fFzY/Cvrx9b3kvJQbNkiSuJ098Fq782mmYGwW\nf3Cfw6a4vwKBgQCEEqWGyS7caArpdd1+52AWyIUldgjKMdH9VqcCfoQTux91taA4\n/9qhWjO8VGkGQEby8+WXED2SCnacCQgRmgzyqjxrec7qiZyll6GDsyFG5UF1bJsq\n/RCFnFvBRFDYD6B87TMvTY2ABTaQ4QHBKrtOfJGEmSRn0nu4xcWM42vrNQKBgHfd\n0mGfUCC1TE9u4XMzK4hbFCg3L0cj7dZpoWTnXSclbiq4O8FEyRUN1UtEOExiTjHy\nwZU+Jn1QmAlkhI2zskxC0IlHfOo577AfqeADHQQv5n8FXqAdwfmXrPP/x6fk0UhR\nPgugkQM+OV+wt7woIJl2YN03r99CO3WqDjNVl2DPAoGBALu2trzBYxtV7vSWdB+a\nxJ3YXZWPcE7VsFm/qjG4JGwSIumVhLlEDL0tMMqXpOCBTFQqxRMoVkZNnyY3yTJs\nCpZcu6LOhy5BOz1omFVmpx1+4ZRdQlgeaMm5tZ49hgQCSfRSUPK8/o6c5Vw1Ap9x\nTldemknt7m9nLlkJFiXIASFo\n-----END PRIVATE KEY-----\n",
+  "client_email": "employee-attrition-dataset@double-kite-475110-i2.iam.gserviceaccount.com",
+  "client_id": "105081306604807633301",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/employee-attrition-dataset%40double-kite-475110-i2.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
