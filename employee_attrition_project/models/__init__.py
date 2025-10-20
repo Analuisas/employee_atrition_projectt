@@ -1,2 +1,2 @@
-from .base import Base, engine, SessionLocal
-from .employee import EmployeeAttrition
+from .base import Base, get_engine, get_session
+from .employee import Employee
