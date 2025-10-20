@@ -6,6 +6,8 @@ from dotenv import load_dotenv
 from googleapiclient.discovery import build
 from oauth2client.service_account import ServiceAccountCredentials
 from sqlalchemy import create_engine
+from pipeline.data_transform import convert_yes_no_to_boolean, normalize_column_names
+
 
 def load_data_from_drive(folder_id: str):
     filename = "credentials.json"
@@ -47,4 +49,3 @@ def save_data_to_postgres(dataframes: dict, db_url: str):
     for name, df in dataframes.items(): 
         table_name = name.lower().replace(" ", "_")
         df.to_sql(table_name, engine, if_exists='replace', index=False)
-    
