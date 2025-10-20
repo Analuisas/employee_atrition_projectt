@@ -42,10 +42,7 @@ def load_data_from_drive(folder_id: str):
     return dataframes
 
 def save_data_to_postgres(dataframes: dict, db_url: str):
-    db_url = os.getenv("DB_URL")
-    connection_str = f"db_url"
-
-    engine = create_engine(connection_str)
+    engine = create_engine(db_url)
     for name, df in dataframes.items(): 
         table_name = name.lower().replace(" ", "_")
         df.to_sql(table_name, engine, if_exists='replace', index=False)

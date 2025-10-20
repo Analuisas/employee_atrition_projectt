@@ -26,7 +26,7 @@ def upload_df_to_drive(df, sheet_name, folder_id, creds_path):
         sheet.update([df.columns.values.tolist()] + df.values.tolist())
     else:
         spreadsheet = client.create(sheet_name)
-        spreadsheet.share('', role='reader', type='anyone')  # público, opcional
+        spreadsheet.share('', role='reader', type='anyone')  
         sheet = spreadsheet.sheet1
         sheet.update([df.columns.values.tolist()] + df.values.tolist())
 
