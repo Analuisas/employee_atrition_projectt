@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from googleapiclient.discovery import build
 from oauth2client.service_account import ServiceAccountCredentials
 from sqlalchemy import create_engine
-from pipeline.data_transform import convert_yes_no_to_boolean, normalize_column_names
+from pipeline.data_transform import transform_dataframe
 
 
 def load_data_from_drive(folder_id: str):
@@ -24,7 +24,7 @@ def load_data_from_drive(folder_id: str):
     client = gspread.authorize(creds)
 
     drive = build('drive', 'v3', credentials=creds)
-    folder_id = "1OPXB9-peoHdgrXjSMGidl3azmiHA6YXB"
+    folder_id = os.getenv("DRIVE_FOLDER_ID")
 
     results = drive.files().list(
         q=f"'{folder_id}' in parents and mimeType='application/vnd.google-apps.spreadsheet'",

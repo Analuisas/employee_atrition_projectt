@@ -21,3 +21,8 @@ def normalize_column_names(df: pd.DataFrame) -> pd.DataFrame:
         .str.replace('-', '_')
     )
     return df
+
+def transform_dataframe(df: pd.DataFrame) -> pd.DataFrame:
+    df = normalize_column_names(df)
+    df = convert_yes_no_to_boolean(df)
+    return df
