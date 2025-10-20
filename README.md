@@ -92,5 +92,5 @@ Ao final, seu banco de dados estará alimentado com as tabelas de resumo para qu
 -----
 
 *Desenvolvido com o intuito de aplicar conceitos de Data Engineering em uma análise de Data Science clássica.*
-"""
+
 
