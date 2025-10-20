@@ -6,6 +6,8 @@ from dotenv import load_dotenv
 from googleapiclient.discovery import build
 from oauth2client.service_account import ServiceAccountCredentials
 from sqlalchemy import create_engine
+from sqlalchemy.orm import Session
+from sqlalchemy.sql import text
 from pipeline.data_transform import transform_dataframe
 
 
@@ -41,8 +43,46 @@ def load_data_from_drive(folder_id: str):
 
     return dataframes
 
-def save_data_to_postgres(dataframes: dict, db_url: str):
+from sqlalchemy import create_engine
+from sqlalchemy.sql import text
+from sqlalchemy.orm import Session 
+import pandas as pd 
+
+def save_data_to_postgres(dataframes, db_url):
     engine = create_engine(db_url)
-    for name, df in dataframes.items(): 
-        table_name = name.lower().replace(" ", "_")
-        df.to_sql(table_name, engine, if_exists='replace', index=False)
+    
+    # Inicializa table_name ANTES do loop. ESSENCIAL para evitar UnboundLocalError
+    table_name = None 
+    
+    try:
+        for name, df in dataframes.items():
+            # 1. Checagem de validade e atribuição
+            if df is None or df.empty:
+                 print(f"AVISO: DataFrame '{name}' está vazio e será ignorado.")
+                 continue # Pula para o próximo item
+                 
+            table_name = name.lower().replace(" ", "_")
+            print(f"Processando tabela: {table_name}")
+            
+            # --- Bloco TRUNCATE (Limpeza) ---
+            try:
+                with Session(engine) as session:
+                    session.execute(text(f"TRUNCATE TABLE {table_name} RESTART IDENTITY;"))
+                    session.commit()
+                    print(f"Tabela '{table_name}' limpa.")
+            except Exception as e:
+                # O TRUNCATE falha se a tabela não existe. Isso é OK.
+                print(f"Aviso: Tabela '{table_name}' será criada, pois a limpeza falhou. {e}")
+                
+            # --- INSERÇÃO/CRIAÇÃO ---
+            df.to_sql(table_name, engine, if_exists='append', index=False)
+            print(f"Dados inseridos/atualizados com sucesso.")
+            
+    except Exception as e:
+        # Este bloco captura erros que ocorreram ANTES ou DURANTE o loop
+        if table_name:
+            print(f"\nERRO FATAL: Falha ao processar a tabela {table_name}. Causa: {e}")
+        else:
+            print(f"\nERRO FATAL: O loop não iniciou. Verifique se 'dataframes' é um dicionário válido. Causa: {e}")
+        # Relança a exceção para ver o traceback completo
+        raise e
